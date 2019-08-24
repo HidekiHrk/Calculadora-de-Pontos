@@ -23,9 +23,6 @@ $(() => {
     $('#closeButton').on('click', () => {
         app.quit();
     })
-    $('.noteButton').on('click', (e) => {
-        e.target.remove();
-    })
     $("#blocks")
         .sortable({revert:true, axis:"y"})
         .disableSelection();
@@ -69,6 +66,9 @@ $(() => {
         let buttonGroup = button.parents('.cardButton');
         if(buttonGroup.children('.noteButton').length < 6){
             let newButton = $(`<button type="button" class="noteButton btn btn-secondary">10</button>`);
+            newButton.on('click', (e) => {
+                e.target.remove();
+            });
             buttonGroup.append(newButton);
         }
     })
