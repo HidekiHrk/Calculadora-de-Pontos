@@ -1,7 +1,10 @@
 var remote = require('electron').remote;
+var webFrame = require('electron').webFrame;
 var { app, BrowserWindow, globalShortcut } = remote;
 var bwindow = remote.getCurrentWindow()
-
+webFrame.setVisualZoomLevelLimits(1,1);
+webFrame.setLayoutZoomLevelLimits(0,0);
+webFrame.setZoomLevel(0);
 
 function addNote(buttonGroup){
     let win = new BrowserWindow({
@@ -113,4 +116,5 @@ $(() => {
     }
     $('#addButton').on('click', addCard)
     globalShortcut.register('CommandOrControl+K', addCard)
+    addNote()
 })
