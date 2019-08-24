@@ -5,7 +5,7 @@ app.on('ready', () => {
     var MainWindow = new BrowserWindow({
         width:320, height:480,
         maximizable: false, transparent:true,
-        frame:false, webPreferences:{nodeIntegration:true},
+        frame:false, webPreferences:{nodeIntegration:true, zoomFactor:1.0},
         resizable:false,
         icon:`${__dirname}/img/icon.png`
     })
