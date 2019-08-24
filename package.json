@@ -1,0 +1,28 @@
+{
+  "name": "calculadora-de-pontos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron . --enable-transparent-visuals --disable-gpu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HidekiHrk/Calculadora-de-Pontos.git"
+  },
+  "author": "HidekiHrk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HidekiHrk/Calculadora-de-Pontos/issues"
+  },
+  "homepage": "https://github.com/HidekiHrk/Calculadora-de-Pontos#readme",
+  "devDependencies": {
+    "electron": "^6.0.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0"
+  }
+}

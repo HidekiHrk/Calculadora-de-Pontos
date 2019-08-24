@@ -1,0 +1,213 @@
+@font-face{
+    font-family: 'Ruda';
+    src: url('./fonts/Ruda-Regular.ttf')
+}
+
+html {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Ruda';
+    overflow:hidden;
+}
+
+#mainDiv{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#controls {
+    width: 100%;
+    display: block;
+    background-color: #333;
+    -webkit-user-select: none;
+}
+#controls button {
+    outline: none;
+    border: 0;
+    -webkit-app-region: no-drag;
+    height: 28px;
+    width: 28px;
+    padding: 0;
+    margin: 0;
+    background-color: #666;
+    transition: background-color 0.3s ease;
+}
+
+#controls button img{
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    opacity: 0.6;
+    -webkit-user-drag: none;
+    fill: #aaa !important;
+}
+
+#controls .separator {
+    height: 28px;
+    padding: 0;
+    margin: 0;
+    -webkit-app-region: drag;
+}
+
+#controls .separator p {
+    margin-top: 3px;
+    color:#aaa;
+}
+
+#minimizeButton:hover {
+    background-color: #75c1c5;
+}
+#closeButton:hover {
+    background-color: #c54848;
+}
+#menuButton:hover {
+    background-color: #7765aa;
+}
+
+#addButton img {
+    height: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+#addButton {
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+#AppContainer {
+    overflow-y: scroll;
+}
+
+#AppContainer::-webkit-scrollbar {
+    background-color: #222;
+    width: 15px;
+}
+
+#AppContainer::-webkit-scrollbar-thumb {
+    background-color:#493d69;
+    transition: background-color 0.3s ease;
+}
+
+#AppContainer::-webkit-scrollbar-thumb:hover {
+    background-color: #7765aa;
+}
+
+.dropdown .dropdown-menu .dropdown-item {
+    transition: background-color 0.3s ease;
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: #7765aa55;
+}
+
+.dropdown .dropdown-menu .dropdown-item:active {
+    background-color: #7765aa;
+}
+
+.dropdown .dropdown-menu .dropdown-item img {
+    opacity: 0.6;
+    height: 16px;
+    margin: 0;
+    margin-right: 5px;
+    padding: 0;
+}
+
+p, h5, span, button, a, b, img {
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.memberCard {
+    margin-left: 1px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 0;
+    border: 1px solid #0002;
+    border-radius: 10px;
+}
+
+.memberCard .cbody {
+    padding: 10px;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.memberCard .cbody .cardButton button, .removeButton {
+    height: 30px;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.memberCard .cbody button img, .removeButton img {
+    height: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.username input{
+    -webkit-user-select: none;
+    height: 30px;
+    transition: border 0.3s ease, border-radius 0.3s ease;
+    padding-left: 5px;
+    background-color: transparent;
+    border-radius: 4px;
+    border: none;
+}
+
+.username input:focus {
+    outline: none;
+}
+
+.editbutton {
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    background-color: #aaa3;
+}
+.editbutton img {
+    opacity: 0.6;
+}
+
+.editbutton:hover {
+    background-color: #88e;
+}
+
+.bactive:hover {
+    background-color: rgb(136, 238, 190);
+}
+
+.editbutton:focus{
+    outline: none;
+    border: none;
+}
+
+#blocks {
+    margin: 0;
+    padding: 0;
+}
+
+#h5Header {
+    margin-top: 10px;
+}

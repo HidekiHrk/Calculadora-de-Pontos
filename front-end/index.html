@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./index.css">
+    <title>Calculadora de Pontos</title>
+</head>
+<body>
+    <div id="mainDiv" class="d-flex flex-column">
+        <!-- Control Bar -->
+        <div id="controls" class="d-flex justify-content-end">
+            <div class="dropdown">
+                <button id="menuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="img/svg/menu.svg">
+                </button>
+                <div class="dropdown-menu" aria-labelledby="menuButton">
+                    <a class="dropdown-item" href="#"><img src="./img/svg/open.svg"> Abrir Projeto</a>
+                    <a class="dropdown-item" href="#"><img src="./img/svg/folder.svg"> Salvar</a>
+                    <a class="dropdown-item" href="#"><img src="./img/svg/options.svg"> Configurações</a>
+                </div>
+            </div>
+            <div class="separator flex-fill">
+                <p class="font-weight-bold text-center">Calculadora de Pontos</p></div>
+            <button id="minimizeButton" class="">
+                <img src="img/svg/minimize.svg">
+            </button>
+            <button id="closeButton" class="">
+                <img src="img/svg/close.svg">
+            </button>
+        </div>
+        <nav class="navbar navbar-light bg-light pt-0 pb-0 shadow-sm">
+            <button id="addButton" class="btn btn-dark mt-2 mb-2">
+                <img src="img/svg/plus.svg">
+            </button>
+            <h5 id="h5Header" class="text-center">Pontuação dos Membros</h1>
+        </nav>
+
+        <!-- Container -->
+        <div id="AppContainer" class="container flex-fill">
+            <!-- Blocks -->
+            <div id="blocks">
+                <!-- Block Start -->
+                <div class="memberCard mt-2 shadow-sm bg-light" hidden>
+                    <div class="cbody">
+                        <p class="username d-flex">
+                            <input type="text" class="mr-auto flex-fill" readonly placeholder="Nome do Membro">
+                            <button class="editbutton"><img src="img/svg/edit.svg"></button>
+                        </p>
+                        <div class="d-flex">
+                            <div class="cardButton btn-group mr-auto" role="group">
+                                <button type="button" class="addNoteButton btn btn-dark">
+                                    <img src="img/svg/plus.svg">
+                                </button>
+                                <button type='button' class="noteButton btn btn-secondary">10</button>
+                            </div>
+                            <button type="button" class="removeButton btn btn-danger">
+                                <img src="img/svg/close_white.svg">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Block End -->
+
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script src="./jquery-ui.min.js"></script>
+    <script>require('popper.js');</script>
+    <script>require('bootstrap');</script>
+    <script src="./index.js"></script>
+</body>
+</html>
