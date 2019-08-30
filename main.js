@@ -6,11 +6,11 @@ app.on('ready', () => {
         width:320, height:480,
         maximizable: false, transparent:true,
         frame:false, webPreferences:{nodeIntegration:true, zoomFactor:1.0},
-        resizable:false, show:false,
+        resizable:false, show:true,
         icon:`${__dirname}/front-end/img/png/icon.png`
     })
-    // MainWindow.loadFile(`${__dirname}/front-end/index.html`);
-    MainWindow.webContents.openDevTools({mode:'detach'})
+    MainWindow.loadFile(`${__dirname}/front-end/index.html`);
+    // MainWindow.webContents.openDevTools({mode:'detach'})
     MainWindow.once('ready-to-show', () => {
         MainWindow.show();
     })

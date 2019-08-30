@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "electron-packager . --asar",
     "start": "electron . --enable-transparent-visuals --disable-gpu"
   },
   "repository": {
@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/HidekiHrk/Calculadora-de-Pontos#readme",
   "devDependencies": {
-    "electron": "^6.0.3"
+    "electron": "^6.0.3",
+    "electron-packager": "^14.0.5"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",

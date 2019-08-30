@@ -14,6 +14,14 @@ var currentNote = {
     closed:true
 }
 
+function sumAll(arr){
+    let sumResult = 0;
+    for(let x = 0; x < arr.length; x++){
+        sumResult += arr[x];
+    }
+    return sumResult;
+}
+
 ipcRenderer.on('newNote', (event, value) => {
     currentNote.note = value[0];
     ipcRenderer.sendTo(value[1], 'close', [])
@@ -87,8 +95,7 @@ $(() => {
             message:"Deseja sair sem salvar?",
             buttons:['Sim', 'Não', 'Salvar'],
             defaultId:0,
-            cancelId:1,
-            icon:`${__dirname}/img/png/icon.png`
+            cancelId:1
         })
         switch(msgbx){
             case 0:
@@ -237,11 +244,52 @@ $(() => {
             let readedContent = fs.readFileSync(diag, {encoding:'utf-8'}).toString();
             let readedJson = JSON.parse(readedContent);
             let cardList = readedJson.cards;
-            console.log(readedJson)
             $('#blocks').empty();
             for(let x = 0; x < cardList.length; x++){
                 addCard({id:cardList[x].id}, cardList[x].name, cardList[x].notes)
             }
         }
     })
+    $('#exportProject').click(e => {
+        let fileExtension = 'txt'
+        let diag = dialog.showSaveDialogSync(bwindow, {
+            title:"Exportar Projeto",
+            filters:[
+                {name: 'Arquivo de Texto', extensions:[fileExtension]}
+            ]
+        });
+        if(diag){
+            if(!diag.endsWith('.' + fileExtension)){
+                diag += '.' + fileExtension;
+            }
+            let cards = getAllCards().filter(m => m.name);
+            let cardRanking = [];
+            for(let x = 0; x < cards.length; x++){
+                let Card = cards[x];
+                let myCard = {
+                    name:Card.name,
+                    note:sumAll(Card.notes) + (10 * Card.notes.length)
+                }
+                if(cardRanking.length == 0){
+                    cardRanking.push(myCard);
+                }
+                else{
+                    for(let y = 0; y < cardRanking.length; y++){
+                        if(myCard.note > cardRanking[y].note){
+                            cardRanking.splice(y, 0, myCard);
+                            break;
+                        }
+                    }
+                }
+            }
+            console.log(cardRanking)
+            for(let z = 0; z < cardRanking.length; z++){
+                cardRanking[z].position = z + 1;
+            }
+            let cardRankingStr = cardRanking.map(r => {
+                return `${r.position} - ${r.name} | ${r.note}`
+            }).join('\n');
+            fs.writeFileSync(diag, cardRankingStr, {encoding:'utf-8'});
+        }
+    });
 })
