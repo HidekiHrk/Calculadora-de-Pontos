@@ -131,6 +131,7 @@ $(() => {
                     border: "none",
                     "background-color": "transparent"
                 })
+                .focus()
                 .attr('readonly', true);            
         }
         else{
@@ -282,7 +283,6 @@ $(() => {
                     }
                 }
             }
-            console.log(cardRanking)
             for(let z = 0; z < cardRanking.length; z++){
                 cardRanking[z].position = z + 1;
             }
